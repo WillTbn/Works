@@ -1,0 +1,17 @@
+/* TEAM */
+	Chef:Jorge Nunes
+	Contact: jlbnunes@live.com  
+	Twitter: @jlbnwill
+	From:São João de Meriti, Rio de Janeiro, Brasil
+
+/* THANKS */
+    Bonieky Larceda
+    teacher
+	
+		
+
+/* SITE */
+	Last update:2020/28/08
+	Language: Portugues
+	Doctype:HTML5
+	IDE: VsCode
