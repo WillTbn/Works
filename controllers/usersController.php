@@ -44,10 +44,15 @@ class usersController extends controller{
             if(isset($_POST['email']) && !empty($_POST['email'])){
                 $email = addslashes($_POST['email']);
                 $pass = addslashes($_POST['password']);
-                $group = addcslashes($_POST['group']);
+                $group = addslashes($_POST['group']);
 
-                $u->add($email, $pass, $group, $u->getCompany());
-                header("Location: ".BASE_URL."/users");
+                $a = $u->add($email, $pass, $group, $u->getCompany());
+                if($a == '1'){
+                    header("Location: ".BASE_URL."/users");
+                }else{
+                    $data['erro_msg'] = "Usuário já existe";
+                }
+                
             }
 
             $data['group_list'] = $p->getGroupList($u->getCompany());
@@ -56,5 +61,52 @@ class usersController extends controller{
         }else{
             header("Location: ".BASE_URL);
         }
+    }
+    public function edit($id){
+        $data = [];
+        $u = new Users();
+        //aqui pegando a sesão e informações do usuario e setando o mesmo.
+        $u->setLoggedUser();
+        //definindo minha campanhia atras do id do usuario
+        $company = new Company($u->getCompany());
+        $data['company_name'] = $company->getName();
+        $data['user_email'] = $u->getEmail();
+        // verificando a permisão do usuario
+        if($u->hasPermission('users_view')){
+            
+            $p= new Permissions();
+
+            if(isset($_POST['group']) && !empty($_POST['group'])){
+                $pass = addslashes($_POST['password']);
+                $group = addslashes($_POST['group']);
+                
+                $u->edit($pass, $group, $id, $u->getCompany());                
+                header("Location: ".BASE_URL."/users");
+                
+            }
+            $data['user_info'] = $u->getInfo($id, $u->getCompany());
+            $data['group_list'] = $p->getGroupList($u->getCompany());
+
+            $this->loadTemplate('users_edit', $data);
+        }else{
+            header("Location: ".BASE_URL);
+        }
+    }
+    public function delete($id){
+        $data = [];
+        $u = new Users();
+        $u->setLoggedUser();
+        $company = new Company($u->getCompany());
+        $data['company_name'] = $company->getName();
+        $data['user_email'] = $u->getEmail();
+        // verificando a permisão do usuario
+        if($u->hasPermission('users_view')){
+            $p= new Permissions();
+            $u->delete($id, $u->getCompany());
+            header("Location: ".BASE_URL."/users");
+        }else{
+            header("Location: ".BASE_URL);
+        }
+        
     }
 }
