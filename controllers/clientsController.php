@@ -45,6 +45,25 @@ class clientsController extends controller{
         if($u->hasPermission('clients_edit')){
             $c = new Clients();
             
+            if(isset($_POST['name']) && !empty($_POST['name'])){
+
+                $name = addslashes($_POST['name']);
+                $email = addslashes($_POST['email']);
+                $phone = addslashes($_POST['phone']);
+                $stars = addslashes($_POST['stars']);
+                $internal_obs = addslashes($_POST['internal_obs']);
+                $address = addslashes($_POST['address']);
+                $address_zipcode = addslashes($_POST['address_zipcode']);
+                $address_number = addslashes($_POST['address_number']);
+                $address_country = addslashes($_POST['address_country']);
+                $address_state = addslashes($_POST['address_state']);
+                $address_city = addslashes($_POST['address_city']);
+
+                $c->add($u->getCompany(), $name, $email, $phone, $stars, $internal_obs, $address, $address_city, $address_country, $address_number, $address_state, $address_zipcode);
+                
+                header("Location: ".BASE_URL."/clients");
+            }
+
             $this->loadTemplate('clients_add', $data);
         }else{
             header("Location: ".BASE_URL."/clients");

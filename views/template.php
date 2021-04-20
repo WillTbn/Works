@@ -119,12 +119,13 @@
     <div class="container px-5 p-sm-0">
     <?php
         $this->loadViewInTemplate($viewName, $viewData);
-        ?>
+    ?>
     </div>
-        
-    <script type="text/javascript" src="<?=BASE_URL;;?>/assets/js/jquery-3.4.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL;;?>/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL;;?>/assets/js/jquery.slimscroll.min.js"></script>
-    <script type="text/javascript" src="<?=BASE_URL;;?>/assets/js/script.js"></script>
+    
+    <script type="text/javascript" src="<?=BASE_URL;?>/assets/js/jquery-3.4.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL;?>/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL;?>/assets/js/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL;?>/assets/js/script.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL; ?>/assets/js/script_clients_add.js"></script>
 </body>
 </html>

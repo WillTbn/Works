@@ -1,4 +1,5 @@
 <h1 class="p-5">Clientes </h1>
+
 <table class="table">
 <?php if($edit_permission):?>
     <a href="<?php echo BASE_URL;?>/clients/add" class="btn btn-success mb-5">Adicionar Clientes</a>

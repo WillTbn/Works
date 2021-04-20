@@ -4,7 +4,7 @@ require 'environment.php';
 global $config;
 $config = array();
 if(ENVIRONMENT == 'development') {
-	$config['dbname'] = 'contawork';
+	$config['dbname'] = 'contawoza';
 	$config['host'] = 'localhost';
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';

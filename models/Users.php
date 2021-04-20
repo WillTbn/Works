@@ -74,8 +74,8 @@ class Users extends model {
         return $this->permissions->hasPermission($name);
     }
     public function findUsersInGroup($id){
-        $sql= $this->db->prepare("SELECT COUNT(*) as c FROM users WHERE id_group = :group");
-        $sql->bindValue(":group", $id);
+        $sql= $this->db->prepare("SELECT COUNT(*) as c FROM users WHERE id_group = :id_group");
+        $sql->bindValue(":id_group", $id);
         $sql->execute();
         $row = $sql->fetch();
         if($row['c'] == '0'){
