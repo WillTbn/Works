@@ -33,8 +33,8 @@
             <input type="text" class="form-control" name="address_number" id="address_number" placeholder="">
         </div>        
         <div class="form-group col-md-2">
-            <label for="address_neighb">Bairro</label>
-            <input type="text" class="form-control" name="address_neighb" id="address_neighb" placeholder="">
+            <label for="district">Bairro</label>
+            <input type="text" class="form-control" name="district" id="district" placeholder="">
         </div>
     </div>
     <div class="form-row">
