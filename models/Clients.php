@@ -2,7 +2,7 @@
 class Clients extends model{
     public function getList($offset){
         $array = [];
-        $sql = $this->db->prepare("SELECT * FROM clients LIMIT 1, 10");
+        $sql = $this->db->prepare("SELECT * FROM clients LIMIT $offset, 10");
         $sql->execute();
         if($sql->rowCount() > 0 ){
             $array = $sql->fetchAll();

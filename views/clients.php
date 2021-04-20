@@ -28,8 +28,12 @@
                 <?php echo $c['stars'];?>
             </td>
                 <td>
-                <a class="btn btn-success" href="<?php echo BASE_URL;?>/users/edit/<?php echo $us['id'];?>">Editar</a>
-                <a class="btn btn-danger" href="<?php echo BASE_URL;?>/users/delete/<?php echo $us['id'];?>" onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a>
+                <?php if($edit_permission):;?>
+                <a class="btn btn-success" href="<?php echo BASE_URL;?>/clients/edit/<?php echo $c['id'];?>">Editar</a>
+                <a class="btn btn-danger" href="<?php echo BASE_URL;?>/clients/delete/<?php echo $c['id'];?>" onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a>
+                <?php else: ?>
+                    <a class="btn btn-success" href="<?php echo BASE_URL;?>/clients/view/<?php echo $c['id'];?>">Ver</a>
+                <?php endif;?>
             </td>
         <?php endforeach;?>
     </tbody>
