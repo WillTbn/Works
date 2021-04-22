@@ -70,10 +70,21 @@ class Clients extends model{
         $sql = $this->db->prepare("SELECT COUNT(*) as c FROM clients WHERE id_company = :id_company");
         $sql->bindValue(":id_company", $id_company);
         $sql->execute();
-        
+
         $row = $sql->fetch();
         $r  = $row['c'];
 
         return $r;
+    }
+    public function searchClientByName($name, $id_company){
+        $array =[];
+        $sql = $this->db->prepare("SELECT name, id FROM clients WHERE name LIKE :name ");
+        $sql->bindValue(":name", '%'.$name.'%');
+        $sql->execute();
+
+        if($sql->rowCount()> 0){
+            $array = $sql->fetchAll();
+        }
+        return $array;
     }
 }
