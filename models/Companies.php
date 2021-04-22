@@ -1,12 +1,12 @@
 <?php
-class Company extends model {
+class Companies extends model {
     
     private $companyInfo;
     
     public function __construct($id){
         parent::__construct();
 
-        $sql = $this->db->prepare("SELECT * FROM company WHERE id = :id");
+        $sql = $this->db->prepare("SELECT * FROM companies WHERE id = :id");
         $sql->bindValue(':id', $id);
         $sql->execute();
 

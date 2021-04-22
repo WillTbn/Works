@@ -18,13 +18,14 @@ Coloquei meus toques,na parte gafrica, para fica mais a minha cara e da empresa,
 ### instalações 
 
 Nenhuma, apenas requer crição do banco de dados, com estrura que vá roda nesse arquitetura.
-[Pode baixa aqui!](https://mega.nz/file/ldR12KgD#_CzSWbzdMWVvFEsrSU9vuwT2Gc3zDCJoVN0FHWlMGSE)
+[Pode baixa aqui!](https://mega.nz/file/lyBFwSLR#U1q3z0BS3Wmp-KW9GgEFSLbMj3i7E1cbtX5Nqn0czew)
 
 >#### Que pé estou 
 >
->Estou trabalhando na linha de código de criação e edição de usuarios.
 >Oque fiz:
 >* criei layout 
 >* criei estrutura de login
 >* criei parte de permissão de usuarios com base em seu grupo
 >* edição das permissões e seus grupos
+>* Clients
+>* CRUD só a parte de delete que esta esperando arquitetura, para quando deleta, deleta tudo ligado ao cliente

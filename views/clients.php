@@ -13,8 +13,8 @@
             <th scope="col">Ações</th>
         </tr>
     </thead>
-    <tbody>
-        <?php foreach($clients_list as $c):?>
+    <?php foreach($clients_list as $c):?>
+    <tbody>        
             <td>
                 <?php echo $c['name'];?>
             </td>
@@ -35,6 +35,16 @@
                     <a class="btn btn-success" href="<?php echo BASE_URL;?>/clients/view/<?php echo $c['id'];?>">Ver</a>
                 <?php endif;?>
             </td>
-        <?php endforeach;?>
+        
     </tbody>
+    <?php endforeach;?>
 </table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+    <?php for($q=1;$q<=$p_count;$q++): ?>
+        <li class="page-item <?php echo ($q == $p)?'active':'';?>"><a class="page-link" href="<?=BASE_URL;?>/clients?p=<?=$q;?>"><?=$q;?></a></li>
+    <?php endfor;?>    
+    <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+  </ul>
+</nav>

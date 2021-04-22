@@ -15,22 +15,31 @@ class clientsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario
         if($u->hasPermission('clients_view')){
             $c = new Clients();
             $offset = 0;
-
+            $data['p'] = 1;
+            if( isset($_GET['p']) && !empty($_GET['p']) ){
+                $data['p'] = intval($_GET['p']);
+                if($data['p'] == 0){
+                    $data['p'] = 1;
+                }
+            }
+            // configurando paginação de form dinamica
+            $offset = ( 10 * ($data['p']-1));
             $data['clients_list'] = $c->getList($offset, $u->getCompany());
+            $data['clients_count'] = $c->getCount($u->getCompany());
+            $data['p_count'] = ceil($data['clients_count'] / 10);
             $data['edit_permission'] = $u->hasPermission('clients_edit');
 
             $this->loadTemplate('clients', $data);
         }else{
             header("Location: ".BASE_URL);
         }
-        
     }
     public function add(){
         $data = [];
@@ -38,7 +47,7 @@ class clientsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario
@@ -77,7 +86,7 @@ class clientsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario

@@ -15,7 +15,7 @@ class permissionsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario
@@ -35,7 +35,7 @@ class permissionsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario
@@ -59,7 +59,7 @@ class permissionsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario
@@ -83,7 +83,7 @@ class permissionsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario
@@ -101,7 +101,7 @@ class permissionsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario
@@ -119,7 +119,7 @@ class permissionsController extends controller{
         //aqui pegando a sesão e informações do usuario e setando o mesmo.
         $u->setLoggedUser();
         //definindo minha campanhia atras do id do usuario
-        $company = new Company($u->getCompany());
+        $company = new Companies($u->getCompany());
         $data['company_name'] = $company->getName();
         $data['user_email'] = $u->getEmail();
         // verificando a permisão do usuario

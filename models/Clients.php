@@ -23,9 +23,10 @@ class Clients extends model{
         }
         return $array;
     }
-    public function add($id_company,$name, $email, $phone, $stars, $internal_obs, $address,$district, $address_city, $address_country, $address_number, $address_state, $address_zipcode,$address2){
+    public function add($id_company,$name, $email, $phone, $stars, $internal_obs, $address,$district, $address_city, $address_country, $address_number, $address_state, $address_zipcode, $address2){
+        //14
+        $sql = $this->db->prepare("INSERT INTO clients SET id_company = :id_company ,name = :name , email = :email, phone = :phone, stars = :stars, internal_obs = :internal_obs, address = :address, district = :district, address_city = :address_city, address_country = :address_country, address_number = :address_number, address_state = :address_state, address_zipcode = :address_zipcode, address2 = :address2");
         
-        $sql = $this->db->prepare("INSERT INTO clients SET id_company = :id_company,name = :name, email = :email, phone = :phone, stars = :stars, internal_obs = :internal_obs, address = :address,$district = :district, address_city = :address_city, address_country = :address_country, address_number = :address_number, address_state = :address_state, address_zipcode = :address_zipcode, address2 = :address2");
         $sql->bindValue(":id_company", $id_company);
         $sql->bindValue(":name", $name);
         $sql->bindValue(":email", $email);
@@ -39,10 +40,9 @@ class Clients extends model{
         $sql->bindValue(":address_number", $address_number);
         $sql->bindValue(":address_state", $address_state);
         $sql->bindValue(":address_zipcode", $address_zipcode);
-        $sql->bindValue(":adrress2", $address2);
+        $sql->bindValue(":address2", $address2);
         $sql->execute();
-        // echo $id_company.",".$name.",".$email.",".$phone.",".$stars.",".$internal_obs.",".$address.",".$address_city.",".$address_country.",".$address_number.",".$address_state.",".$address_zipcode;
-        //         exit;
+        
     }
     public function edit($id,$id_company,$name, $email, $phone, $stars, $internal_obs, $address,$district, $address_city, $address_country, $address_number, $address_state, $address_zipcode, $address2){
         
@@ -64,5 +64,16 @@ class Clients extends model{
         $sql->bindValue(":id_company", $id_company);
         $sql->execute();        
     }
-    
+    public function getCount($id_company){
+        $r = 0;
+       
+        $sql = $this->db->prepare("SELECT COUNT(*) as c FROM clients WHERE id_company = :id_company");
+        $sql->bindValue(":id_company", $id_company);
+        $sql->execute();
+        
+        $row = $sql->fetch();
+        $r  = $row['c'];
+
+        return $r;
+    }
 }
