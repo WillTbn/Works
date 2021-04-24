@@ -117,3 +117,26 @@
       padding: 0rem 0rem !important;
   }
 }
+.searchresults{
+  width: 348px;
+  background-color: #FFF;
+  position: absolute;
+  border: 1px solid #ccc;
+}
+.si a{
+  color:black;
+  display: block;
+}
+.si a:hover{
+  text-decoration: none;
+}
+.si{
+  height:30px;
+  line-height: 20px;
+  padding-left: 10px;
+  cursor: pointer;
+  
+}
+.si:hover{
+  background-color: #ccc;
+}
