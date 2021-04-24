@@ -24,7 +24,7 @@
                 <?php echo $product['name'];?>
             </td>
             <td>
-                R$<?php echo number_format($product['price'], 2);?>
+                R$<?php echo number_format($product['price'], 2, ',', '.');?>
             </td>
             <td>
                 <?php echo $product['quant'];?>
@@ -39,8 +39,8 @@
             </td>
                 <td>
                 <?php if($edit_permission):;?>
-                <a class="btn btn-success" href="<?php echo BASE_URL;?>/inventory/edit/<?php echo $product['id'];?>">Editar</a>
-                <a class="btn btn-danger" href="<?php echo BASE_URL;?>/inventory/delete/<?php echo $product['id'];?>" onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a>
+                    <a class="btn btn-success" href="<?php echo BASE_URL;?>/inventory/edit/<?php echo $product['id'];?>">Editar</a>
+                    <a class="btn btn-danger" href="<?php echo BASE_URL;?>/inventory/delete/<?php echo $product['id'];?>" onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a>
                 <?php else: ?>
                     <a class="btn btn-success" href="<?php echo BASE_URL;?>/inventory/view/<?php echo $product['id'];?>">Ver</a>
                 <?php endif;?>
