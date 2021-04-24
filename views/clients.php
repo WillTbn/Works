@@ -33,7 +33,7 @@
             <td>
                 <?php echo $c['stars'];?>
             </td>
-                <td>
+            <td>
                 <?php if($edit_permission):;?>
                 <a class="btn btn-success" href="<?php echo BASE_URL;?>/clients/edit/<?php echo $c['id'];?>">Editar</a>
                 <a class="btn btn-danger" href="<?php echo BASE_URL;?>/clients/delete/<?php echo $c['id'];?>" onclick="return confirm('Tem certeza que deseja excluir ?')">Excluir</a>

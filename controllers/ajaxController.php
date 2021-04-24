@@ -25,12 +25,12 @@ class ajaxController extends controller{
             foreach($clients as $citem){
                 $data[] = [
                     'name' => $citem['name'],
-                    'link' => BASE_URL.'/clients/edit/'.$citem['id']
+                    'link' => BASE_URL.'/clients/edit/'.$citem['id'],
+                    'id' => $citem['id']
                 ];
             }
         }
 
         echo json_encode($data);
     }
-
 }
