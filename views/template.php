@@ -76,30 +76,21 @@
         </div>
     </div>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-light bg-light fixed-top">
         <div class="container">
-            <button class="navbar-toggler sideMenuToggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand font-weight-bold" href="#"><?php echo $viewData['company_name'];?></a>
             <button class="sideMenuToggler rounded-circle bg-light border border-white">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-list" fill="#e32636" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </button>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand font-weight-bold" href="#"><?php echo $viewData['company_name'];?></a>
+            <div class="" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <button class="navbar-toggler sideMenuToggler" type="button">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle tira rounded-circle  " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="<?=BASE_URL;?>/assets/images/default-avatar.png" alt="" class="rounded-circle  bg-light border border-white img-fluid" style="max-width: 2rem;">                   
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="position:absolute !important;">
                             <div class="border-bottom d-block text-center">
                                 <p class="text-secondary"><?php echo $viewData['user_email'];?></p>
                             </div>
@@ -136,5 +127,7 @@
     <script type="text/javascript">var BASE_URL = '<?=BASE_URL;?>'</script>
     <script type="text/javascript" src="<?=BASE_URL;?>/assets/js/script.js"></script>
     <script type="text/javascript" src="<?=BASE_URL; ?>/assets/js/script_clients_add.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL;?>/assets/js/jquery.mask.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL;?>/assets/js/script_inventory_add.js"></script>
 </body>
 </html>

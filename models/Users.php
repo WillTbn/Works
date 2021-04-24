@@ -53,7 +53,13 @@ class Users extends model {
         if(isset($this->userInfo['email'])){
             return $this->userInfo['email'];
         }
-        return 0;
+        return '';
+    }
+    public function getId(){
+        if(isset($this->userInfo['id'])){
+            return $this->userInfo['id'];
+        }
+        return '';
     }
     public function getInfo($id, $id_company){
         $array = array();
